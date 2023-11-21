@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center m-4">
+        <h1 class="title">{{title}}</h1>
+      </div>
+    </div>
+  </div>
+  <app-search (searchtextChanged)="onSearchtextEntered($event)"></app-search>
+  <app-filter [all]="getTotalEmp()" 
+              [sales]="getTotalDominSales()" 
+              [management]="getTotalDominManagement()"
+              [marketing]="getTotalDominMarketing()"
+              [finance]="getTotalDominFinance()"
+              [BD]="getTotalBD()"
+              [IT]="getTotalDominIT()"
+              [UI]="getTotalUI()"
+              [male]="getTotalMale()"
+              [female]="getTotalFemale()"
+              [allGender]="getTotalAllGender()"
+              [noAvailable]="getTotalNoAvailable()"
+              [available]="getTotalAvailable()"
+              (filterSelectOptionChanged)="onFilterOptionChanged($event)"></app-filter>
+  <div class="dataCards">
+    <div class="container">
+      <div class="row justify-content-center">
+        <ng-container *ngFor="let emp of pageSlice;">
+          <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="(empCountSelected === 'All' || empCountSelected === emp.domain) && (empGenderSelected === 'Total Members' || empGenderSelected === emp.gender) && (searchText === '' || emp.first_name.toLocaleLowerCase().includes(searchText))">
+            <div class="card empDetail">
+              <div class="card-left">
+                <span class="profile" [ngStyle]="{ 'background-image': 'url(' + emp.avatar + ')' }"></span>
+              </div>
+              <div class="card-right">
+                <h1> {{emp.first_name}} {{emp.last_name}} </h1>
+                <h3><span>Domain : </span> {{emp.domain}}</h3>
+                <div class="bio">
+                  <p><span>Email : </span> <a href={{emp.email}}>{{emp.email}}</a></p>
+                  <p><span>Gender : </span>{{emp.gender}}</p>
+                  <p>{{emp.available}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <mat-paginator [length]="this.empdata.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

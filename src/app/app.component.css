@@ -1,0 +1,13 @@
+.title{display: block;width: 100%;margin: 0 auto;text-align: center;font-size:38px;font-weight: 800;}
+.content{background: #dda0dd4d;}
+.empDetail{display: flex;flex-direction:column; justify-content:center;align-items: center;gap:10px;margin:20px 0;padding: 30px 20px;width:100%;height:100%;max-height:300px;background:#f2f2f2;border-radius: 10px;box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);}
+.card-left{display: block;width:100%;height:auto;max-height: 100%;margin: 0 auto;}
+.card-left .profile{display: block;width:80px;max-width: 100px;height: 80px;margin: 0 auto;background-color:#fff;background-image: url(https://robohash.org/sintessequaerat.png?size=50x50&set=set1);background-size: cover;border-radius: 50%;box-shadow: 0 15px 50px rgba(0, 0, 0, 0.32);}
+.card-right{display: flex;justify-content: flex-start;align-items: flex-start;flex-direction:column;gap:5px;width: 100%;}
+.card-right h1{display: block;width: 100%;margin:0 auto;text-align: left;font-size:28px;}
+.card-right h3{ display: block; width: 100%;margin: 0; font-style: italic; font-weight:600;}
+.card-right .bio{display: flex;justify-content: flex-start;align-items: flex-start;flex-direction: column;width: 100%;}
+.card-right .bio p{display: block;width: 100%;font-size: 18px;}
+.card-right .bio p a{color: #000;text-decoration: none;outline: none;}
+.card-right .bio p a:hover{color:rgb(135, 64, 135);}
+.card-right .bio p span{display:inline;width: 100%;font-size: 18px;font-weight: 500;}

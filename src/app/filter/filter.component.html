@@ -1,0 +1,39 @@
+<div class="filters">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="filter">Filter : </label>
+          <div class="group">
+            <label for="Domain">Select Domain</label>
+            <select class="form-select" (change)="onOptionSelected($event)">
+              <option value="All" selected>All({{all}})</option>
+              <option value="Sales" >Sales({{sales}})</option>
+              <option value="Management">Management({{management}})</option>
+              <option value="Marketing">Marketing({{marketing}}) </option>
+              <option value="Finance">Finance({{finance}}) </option>
+              <option value="IT">IT({{IT}})</option>
+              <option value="UI Designing">UI Designing({{UI}})</option>
+              <option value="Business Development">Business Development({{BD}}) </option>
+            </select>
+          </div>
+          <div class="group">            
+            <label for="Gender">Select Gender</label>
+            <select class="form-select" (change)="onGenderSelected($event)">
+              <option value="Total Members" selected>Total Members({{allGender}})</option>
+              <option value="Male">Male({{male}})</option>
+              <option value="Female">Female({{female}})</option>
+            </select>
+          </div>
+          <div class="group">
+            <label for="available">Availability</label>
+            <select class="form-select">
+              <option value="Available" selected>Available({{available}})</option>
+              <option value="Not Available">Not Available({{noAvailable}})</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
